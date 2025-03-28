@@ -1,0 +1,7 @@
+services:
+  frontend:
+    build:
+      dockerfile: Dockerfile
+    image: "ghcr.io/matevz/demo-rofl-www"
+    ports:
+      - "80:80"
