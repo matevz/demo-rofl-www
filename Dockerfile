@@ -1,4 +1,5 @@
-FROM docker.io/nginx
-COPY ./index.html /usr/share/nginx/html
-EXPOSE 8080
-#CMD ["yarn", "dev", "--host", "0.0.0.0"]
+FROM docker.io/debian:latest
+
+RUN apt update; apt install netcat-openbsd
+
+ENTRYPOINT ["/bin/nc", "-l", "10000"]

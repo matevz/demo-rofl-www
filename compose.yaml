@@ -2,6 +2,8 @@ services:
   frontend:
     build:
       dockerfile: Dockerfile
-    image: "ghcr.io/matevz/demo-rofl-www"
+    image: "ghcr.io/matevz/demo-rofl-www:nc"
     ports:
-      - "80:80"
+      - "10000:10000"
+    annotations:
+      net.oasis.proxy.ports.10000.mode: passthrough
